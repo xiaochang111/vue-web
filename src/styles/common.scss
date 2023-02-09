@@ -1,0 +1,26 @@
+@use './variables.scss'as *;
+@use './resolutions/768.scss'as *;
+@use './resolutions/1280.scss'as *;
+// import dark theme
+@use "element-plus/theme-chalk/src/dark/css-vars.scss"as *;
+@use "element-plus/theme-chalk/src/common/var.scss"as *;
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+
+.flex-box {
+  display: flex;
+}
