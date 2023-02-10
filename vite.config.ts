@@ -26,7 +26,7 @@ export default defineConfig({
     eslintPlugin({
       include: ["src/**/*.ts", "src/**/*.vue", "src/*.ts", "src/*.vue"],
     }),
-    // ...
+    //
     AutoImport({
       resolvers: [ElementPlusResolver()],
     }),

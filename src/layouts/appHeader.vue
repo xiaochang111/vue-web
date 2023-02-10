@@ -2,12 +2,26 @@
 import { isDark, toggleDark } from "@/composables";
 import MenuItem from "./menu/MenuItem.vue";
 import type { Menu } from "./menu/type";
-
+//path必须唯一
 const menus: Menu[] = [
   {
     path: "/home",
     title: "主页",
-    children: [],
+  },
+  {
+    title: "文章",
+    path: "/article",
+  },
+  {
+    title: "设计",
+    path: "/sub",
+    children: [
+      {
+        path: "/test",
+        title: "测试",
+        children: [{ path: "/test3", title: "测试三层" }],
+      },
+    ],
   },
 ];
 </script>
@@ -20,8 +34,8 @@ const menus: Menu[] = [
         <div class="content">
           <el-menu mode="horizontal" unique-opened class="navbar-menu">
             <template v-for="menu in menus" :key="menu.path">
-              <menu-item :menu="menu"></menu-item
-            ></template>
+              <menu-item :menu="menu"></menu-item>
+            </template>
           </el-menu>
           <div class="theme-toggler">
             <ElSwitch v-model="isDark" @change="toggleDark(isDark)"></ElSwitch>
@@ -49,9 +63,11 @@ const menus: Menu[] = [
         flex-grow: 1;
       }
       .content {
+        flex-grow: 2;
         display: flex;
         align-items: center;
         .navbar-menu {
+          flex-grow: 1;
           height: 55px;
         }
       }
