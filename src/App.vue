@@ -6,7 +6,6 @@ const zIndex = 3000;
 <template>
   <el-config-provider size="default" :z-index="zIndex">
     <app-header></app-header>
-    <el-button type="primary">ddd</el-button>
     <router-view></router-view>
   </el-config-provider>
 </template>

@@ -1,16 +1,22 @@
 <script setup lang="ts">
+import { useRouter } from "vue-router";
 import { isDark, toggleDark } from "@/composables";
 import MenuItem from "./menu/MenuItem.vue";
 import type { Menu } from "./menu/type";
-//path必须唯一
+
+const router = useRouter();
+
+function menuSelect(index: string) {
+  router.push({
+    path: index,
+  });
+}
+
+//path必须唯一，路由地址
 const menus: Menu[] = [
   {
     path: "/home",
     title: "主页",
-  },
-  {
-    title: "文章",
-    path: "/article",
   },
   {
     title: "设计",
@@ -32,7 +38,13 @@ const menus: Menu[] = [
       <div class="header-container">
         <div class="left-container"></div>
         <div class="content">
-          <el-menu mode="horizontal" unique-opened class="navbar-menu">
+          <el-menu
+            mode="horizontal"
+            unique-opened
+            class="navbar-menu"
+            default-active="/home"
+            @select="menuSelect"
+          >
             <template v-for="menu in menus" :key="menu.path">
               <menu-item :menu="menu"></menu-item>
             </template>
