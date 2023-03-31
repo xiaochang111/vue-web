@@ -19,15 +19,8 @@ const menus: Menu[] = [
     title: "主页",
   },
   {
-    title: "设计",
-    path: "/sub",
-    children: [
-      {
-        path: "/test",
-        title: "测试",
-        children: [{ path: "/test3", title: "测试三层" }],
-      },
-    ],
+    path: "/read",
+    title: "阅读",
   },
 ];
 </script>
@@ -62,22 +55,27 @@ const menus: Menu[] = [
 .navbar {
   position: sticky;
   width: 100%;
+
   .navbar-wrapper {
     position: relative;
     border-bottom: 1px solid var(--el-border-color);
     top: 0;
+
     .header-container {
       height: 55px;
       display: flex;
       justify-content: space-between;
       margin: 0 auto;
+
       .left-container {
         flex-grow: 1;
       }
+
       .content {
         flex-grow: 2;
         display: flex;
         align-items: center;
+
         .navbar-menu {
           flex-grow: 1;
           height: 55px;
