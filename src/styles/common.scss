@@ -24,3 +24,15 @@ body {
 .flex-box {
   display: flex;
 }
+
+#app{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.el-menu--horizontal{
+border: none;
+}
